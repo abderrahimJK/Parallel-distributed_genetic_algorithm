@@ -75,4 +75,4 @@ You can customize the genetic algorithm by modifying the parameters in the GAIsl
 - `target`: The target string that the algorithm tries to evolve.
 - `mutationRate`: The probability of mutation for each gene in an individual.
 
-![Alt text]([relative%20path/to/img.jpg](https://github.com/abderrahimJK/Parallel-distributed_genetic_algorithm/blob/master/src/main/resources/img.png)?raw=true "Title")
+![Test Result](https://github.com/abderrahimJK/Parallel-distributed_genetic_algorithm/blob/master/src/main/resources/img.png)?raw=true "Title")
