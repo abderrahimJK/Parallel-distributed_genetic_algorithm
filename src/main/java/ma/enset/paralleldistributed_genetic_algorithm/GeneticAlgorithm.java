@@ -13,12 +13,12 @@ public class GeneticAlgorithm {
     private String target;
     private double mutationRate;
 
-    public GeneticAlgorithm(int populationSize, int stringLength, String target, double mutationRate) {
-        this.populationSize = populationSize;
-        this.stringLength = stringLength;
+    public GeneticAlgorithm() {
+        this.populationSize = GAUtils.POPULATION_SIZE;
+        this.stringLength = GAUtils.TARGET.length();
         this.random = new Random();
-        this.target = target;
-        this.mutationRate = mutationRate;
+        this.target = GAUtils.TARGET;
+        this.mutationRate = GAUtils.MUTATION_RATE;
         initializePopulation();
     }
 

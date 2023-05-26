@@ -19,11 +19,6 @@ public class GAIslandAgent extends Agent {
 
     /*****************/
     private GeneticAlgorithm ga;
-    private int populationSize = 100;
-    private int stringLength = 10;
-    private String target = "Hello SDIA";
-    private double mutationRate = 0.01;
-
     protected void setup() {
 
         dfAgentDescription=new DFAgentDescription();
@@ -37,7 +32,7 @@ public class GAIslandAgent extends Agent {
         addBehaviour(tickerBehaviour);
 
         // Initialize the genetic algorithm with the subpopulation size, string length, target, and mutation rate
-        ga = new GeneticAlgorithm(populationSize, stringLength, target, mutationRate);
+        ga = new GeneticAlgorithm();
 
         //TickerBehaviour to periodically run the genetic algorithm
 //        addBehaviour(new TickerBehaviour(this, 1000) {
@@ -87,15 +82,10 @@ public class GAIslandAgent extends Agent {
     private void sendBestIndividual() {
 
         String bestIndividual = ga.getBestIndividual();
-
         ACLMessage message = new ACLMessage(ACLMessage.INFORM);
-
         message.setContent(this.getLocalName()+"-"+bestIndividual+"-"+String.valueOf(ga.fitness(bestIndividual)));
-
         AID receiver = new AID("masterAgent", AID.ISLOCALNAME);
-
         message.addReceiver(receiver);
-
         send(message);
     }
 
